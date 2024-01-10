@@ -43,7 +43,7 @@ import java.util.ArrayList;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-//tut17
+
 public class ProfileFragment extends Fragment {
 
     ImageView profilePic;
@@ -67,7 +67,6 @@ public class ProfileFragment extends Fragment {
     AutoCompleteTextView locationInput;
     EditText descriptionInput;
 
-    // add multiple images
 
 
     public ProfileFragment() {

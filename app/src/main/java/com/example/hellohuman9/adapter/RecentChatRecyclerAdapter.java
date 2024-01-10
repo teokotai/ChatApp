@@ -20,7 +20,6 @@ import com.example.hellohuman9.utils.AndroidUtil;
 import com.example.hellohuman9.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-//TUTORIAL NR 16
 public class RecentChatRecyclerAdapter extends FirestoreRecyclerAdapter<ChatroomModel, RecentChatRecyclerAdapter.ChatroomModelViewHolder>
 {
     Context context;

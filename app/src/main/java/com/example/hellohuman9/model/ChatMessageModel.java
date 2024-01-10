@@ -2,7 +2,6 @@ package com.example.hellohuman9.model;
 
 import com.google.firebase.Timestamp;
 
-//tutorial 14
 public class ChatMessageModel {
     private String message;
     private String senderId;

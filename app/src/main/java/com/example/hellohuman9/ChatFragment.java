@@ -18,7 +18,6 @@ import com.example.hellohuman9.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.Query;
 
-//tutorial 16
 public class ChatFragment extends Fragment {
 
     RecyclerView recyclerView;

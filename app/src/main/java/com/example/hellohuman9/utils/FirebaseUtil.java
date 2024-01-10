@@ -36,12 +36,11 @@ public class FirebaseUtil {
         return FirebaseFirestore.getInstance().collection("chatrooms").document(chatroomId);
     }
 
-    //Tutorial 14, adds the messages
+    // adds the messages
     public static CollectionReference getChatroomMessageReference(String chatroomId){
         return getChatroomReference(chatroomId).collection("chats");
     }
 
-    //tutorial 13
     //create unique chatroom id
     public static String getChatroomId(String userId1, String userId2){
         if (userId1.hashCode()<userId2.hashCode()){
@@ -51,7 +50,6 @@ public class FirebaseUtil {
         }
     }
 
-    //tut16
     public static CollectionReference allChatroomCollectionReference(){
         return FirebaseFirestore.getInstance().collection("chatrooms");
     }
@@ -68,7 +66,6 @@ public class FirebaseUtil {
         return new SimpleDateFormat("HH:MM").format(timestamp.toDate());
     }
 
-    //tut17
     public static void logout(){
         FirebaseAuth.getInstance().signOut();
     }

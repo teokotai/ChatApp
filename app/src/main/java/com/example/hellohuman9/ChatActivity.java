@@ -121,7 +121,6 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
-    //tutorial 15
     void setupChatRecyclerView(){
         Query query = FirebaseUtil.getChatroomMessageReference(chatroomId)
                 .orderBy("timestamp",Query.Direction.DESCENDING);
@@ -144,7 +143,6 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    //tutorial 14
     void sendMessageToUser(String message){
         chatroomModel.setLastMessageTimestamp(Timestamp.now());
         chatroomModel.setLastMessageSenderId(FirebaseUtil.currentUserId());

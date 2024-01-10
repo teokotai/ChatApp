@@ -21,7 +21,6 @@ import com.example.hellohuman9.utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.Query;
 
-// review la cei care au avut grija de animal
 public class SearchUserActivity extends AppCompatActivity {
 
     EditText ageMinInput;
