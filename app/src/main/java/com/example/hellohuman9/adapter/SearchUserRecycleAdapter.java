@@ -30,7 +30,6 @@ public class SearchUserRecycleAdapter extends FirestoreRecyclerAdapter<UserModel
 
     @Override
     protected void onBindViewHolder(@NonNull UserModelViewHolder holder, int position, @NonNull UserModel model) {
-        Log.i("AICI_USER", "model: " + model.getUserId() + " / " + model.isCheckBoxPetOwner() + " / " + model.isCheckBoxCaretaker());
 
         holder.usernameText.setText(model.getUsername());
         holder.phoneText.setText(model.getPhone());
@@ -47,7 +46,6 @@ public class SearchUserRecycleAdapter extends FirestoreRecyclerAdapter<UserModel
                 });
 
         holder.itemView.setOnClickListener(v->{
-            //navigate to chat activity
             Intent intent = new Intent(context, ChatActivity.class);
             AndroidUtil.passUserModelAsIntent(intent,model);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

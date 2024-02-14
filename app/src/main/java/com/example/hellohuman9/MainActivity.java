@@ -54,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView.setSelectedItemId(R.id.menu_chat);
 
-
-        //tut 19
         getFCMToken();
 
     }

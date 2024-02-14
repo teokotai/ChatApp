@@ -45,8 +45,6 @@ public class AndroidUtil {
         userModel.setOwnedPets(intent.getStringExtra("ownedPets"));
         userModel.setAge(intent.getIntExtra("age",0));
         userModel.setPosition(intent.getStringExtra("position"));
-//        userModel.setCheckBoxPetOwner(intent.getBooleanExtra("checkBoxPetOwner", true));
-//        userModel.setCheckBoxCaretaker(intent.getBooleanExtra("checkBoxCaretaker", true));
         return userModel;
     }
 

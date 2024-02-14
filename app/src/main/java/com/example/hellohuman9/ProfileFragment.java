@@ -67,8 +67,6 @@ public class ProfileFragment extends Fragment {
     AutoCompleteTextView locationInput;
     EditText descriptionInput;
 
-
-
     public ProfileFragment() {
     }
 
@@ -98,14 +96,12 @@ public class ProfileFragment extends Fragment {
         updateProfileBtn = view.findViewById(R.id.profile_update_btn);
         progressBar = view.findViewById(R.id.profile_progress_bar);
         logoutBtn = view.findViewById(R.id.logout_btn);
-
         ageInput = view.findViewById(R.id.profile_age);
         descriptionInput = view.findViewById(R.id.profile_description);
 
         locationInput = view.findViewById(R.id.profile_location);
         locationInput.setAdapter(new PlaceAutoSuggestAdapter(ProfileFragment.this, android.R.layout.simple_list_item_1));
 
-        //populate the gender dropdown
         dropdownGender = view.findViewById(R.id.profile_gender);
         String[] genderItems = new String[] {"Female", "Male"};
         genderAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, genderItems);
@@ -116,20 +112,15 @@ public class ProfileFragment extends Fragment {
         positionAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, positionItems);
         dropdownPosition.setAdapter(positionAdapter);
 
-        //populate the experience dropdown
         dropdownExperience = view.findViewById(R.id.profile_experience);
         String[] experienceItems = new String[] {"Beginner", "Intermediate", "Professional"};
         experienceAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, experienceItems);
         dropdownExperience.setAdapter(experienceAdapter);
 
-        //populate the owned pets dropdown
         dropdownOwnedPets = view.findViewById(R.id.profile_owned_pets);
         String[] ownedPetsItems = new String[] {"None", "Dog", "Cat", "Parrot", "Hamster", "Fish", "Others"};
         ownedPetsAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ownedPetsItems);
         dropdownOwnedPets.setAdapter(ownedPetsAdapter);
-//      dropdownGender.setSelection(ownedPetsAdapter.getPosition("Cat"), true);
-
-
 
         getUserData();
         updateProfileBtn.setOnClickListener((v -> {
@@ -161,7 +152,6 @@ public class ProfileFragment extends Fragment {
                         }
                     });
         });
-
         return view;
     }
 
@@ -176,28 +166,21 @@ public class ProfileFragment extends Fragment {
         currentUserModel.setAge(Integer.parseInt(ageInput.getText().toString()));
         currentUserModel.setLocation(locationInput.getText().toString());
         currentUserModel.setDescription(descriptionInput.getText().toString());
-
-
         currentUserModel.setGender(dropdownGender.getSelectedItem().toString());
         currentUserModel.setOwnedPets(dropdownOwnedPets.getSelectedItem().toString());
         currentUserModel.setExperience(dropdownExperience.getSelectedItem().toString());
         currentUserModel.setPosition(dropdownPosition.getSelectedItem().toString());
-
         setInProgress(true);
-
         if (selectedImageUri!=null){
-            //if we have image
             FirebaseUtil.getCurrentProfilePicStorageRef().putFile(selectedImageUri)
                     .addOnCompleteListener(task -> {
                         updateToFirestore();
                     });
         } else {
-            //if we don't have image uploaded but we want to update
             updateToFirestore();
         }
 
     }
-
 
     void updateToFirestore(){
         FirebaseUtil.currentUserDetails().set(currentUserModel)
@@ -213,7 +196,6 @@ public class ProfileFragment extends Fragment {
 
     void getUserData(){
         setInProgress(true);
-
         FirebaseUtil.getCurrentProfilePicStorageRef().getDownloadUrl()
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()){
@@ -227,12 +209,9 @@ public class ProfileFragment extends Fragment {
             currentUserModel = task.getResult().toObject(UserModel.class);
             usernameInput.setText(currentUserModel.getUsername());
             phoneInput.setText(currentUserModel.getPhone());
-
-
             ageInput.setText(String.valueOf(currentUserModel.getAge()));
             locationInput.setText(currentUserModel.getLocation());
             descriptionInput.setText(currentUserModel.getDescription());
-
             dropdownGender.setSelection(genderAdapter.getPosition(currentUserModel.getGender()), true);
             dropdownOwnedPets.setSelection(ownedPetsAdapter.getPosition(currentUserModel.getOwnedPets()), true);
             dropdownExperience.setSelection(experienceAdapter.getPosition(currentUserModel.getExperience()), true);
@@ -250,20 +229,4 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

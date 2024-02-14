@@ -16,10 +16,8 @@ import java.util.ArrayList;
 public class PlaceAutoSuggestAdapter extends ArrayAdapter implements Filterable {
 
     ArrayList<String> results;
-
     int resource;
     ProfileFragment context;
-
     Context context2;
     PlaceApi placeApi = new PlaceApi();
 

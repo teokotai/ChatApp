@@ -30,7 +30,6 @@ public class LoginPhoneNumberActivity extends AppCompatActivity {
 
         progressBar.setVisibility(View.GONE);
 
-        //for the country code picker we have to link the edit text
         countryCodePicker.registerCarrierNumberEditText(phoneInput);
         sendOtpBtn.setOnClickListener((v)->{
             if (!countryCodePicker.isValidFullNumber()){
@@ -38,7 +37,6 @@ public class LoginPhoneNumberActivity extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent(LoginPhoneNumberActivity.this, LoginOtpActivity.class);
-            //pass phone number with the intent to OtpActivity so we can send the Otp (sens data from one activity to another)
             intent.putExtra("phone",countryCodePicker.getFullNumberWithPlus());
             startActivity(intent);
         });

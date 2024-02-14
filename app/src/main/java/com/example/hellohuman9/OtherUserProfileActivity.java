@@ -84,17 +84,5 @@ public class OtherUserProfileActivity extends AppCompatActivity {
                         AndroidUtil.setProfilePic(this,uri,imageView);
                     }
                 });
-
-
-        Log.d("GENDER","TOT GENDER: " + otherUser.getGender());
-
-        Log.d("AICI TRANS", getIntent().getExtras().get("name") + "");
-
     }
-
-
 }
-
-
-
-

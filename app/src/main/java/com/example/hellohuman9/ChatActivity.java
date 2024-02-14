@@ -62,21 +62,16 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        //get UserModel
         otherUser = AndroidUtil.getUserModelFromIntent(getIntent());
         chatroomId = FirebaseUtil.getChatroomId(FirebaseUtil.currentUserId(),otherUser.getUserId());
-
         messageInput = findViewById(R.id.chat_message_input);
         sendMessageBtn = findViewById(R.id.message_send_btn);
         backBtn = findViewById(R.id.back_btn);
         otherUsername = findViewById(R.id.other_username);
         recyclerView = findViewById(R.id.chat_recycle_view);
         imageView = findViewById(R.id.profile_pic_image_view);
-
         profileDetailBtn = findViewById(R.id.profile_detail_btn);
 
-
-        Log.d("AICI","tot aici " + otherUser.getUsername());
 
         FirebaseUtil.getOtherProfilePicStorageRef(otherUser.getUserId()).getDownloadUrl()
                 .addOnCompleteListener(t -> {
@@ -109,16 +104,9 @@ public class ChatActivity extends AppCompatActivity {
                 AndroidUtil.passUserModelAsIntent(intent,otherUser);
 
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            intent.putExtra("name", otherUser.getUsername());
-//            intent.putExtra("phone",otherUser.getPhone());
-//            intent.putExtra("age", otherUser.getAge());
-//            intent.putExtra("gender",otherUser.getGender());
-//            intent.putExtra("location",otherUser.getLocation());
                 startActivity(intent);
             }
         });
-
-
     }
 
     void setupChatRecyclerView(){
@@ -167,7 +155,6 @@ public class ChatActivity extends AppCompatActivity {
            if (task.isSuccessful()){
                chatroomModel = task.getResult().toObject(ChatroomModel.class);
                if (chatroomModel==null){
-                   //first time chat
                    chatroomModel = new ChatroomModel(
                      chatroomId,
                            Arrays.asList(FirebaseUtil.currentUserId(),otherUser.getUserId()),
@@ -181,7 +168,6 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     void sendNotification(String message){
-        //current username, message, currentuserid,otherusertoken
         FirebaseUtil.currentUserDetails().get().addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 UserModel currentUser = task.getResult().toObject(UserModel.class);
@@ -224,24 +210,12 @@ public class ChatActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
 
             }
-
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
 
             }
         });
+
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

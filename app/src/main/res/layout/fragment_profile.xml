@@ -20,53 +20,53 @@
             android:orientation="vertical"
             android:gravity="center">
 
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:background="@drawable/circular_bg"
-        android:backgroundTint="@color/my_primary"
-        android:src="@drawable/person_icon"
-        android:scaleType="centerCrop"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/profile_image_view"/>
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:background="@drawable/circular_bg"
+                android:backgroundTint="@color/my_primary"
+                android:src="@drawable/person_icon"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/profile_image_view"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Username"
-        android:layout_margin="10dp"
-        android:textStyle="bold"
-        android:textSize="17dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Username"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="17dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Username"
-        android:inputType="text"
-        android:layout_margin="5dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"
-        android:id="@+id/profile_username"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Username"
+                android:inputType="text"
+                android:layout_margin="5dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"
+                android:id="@+id/profile_username"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Phone Number"
-        android:layout_margin="10dp"
-        android:textStyle="bold"
-        android:textSize="17dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Phone"
-        android:inputType="text"
-        android:layout_margin="5dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"
-        android:enabled="false"
-        android:id="@+id/profile_phone"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Phone Number"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="17dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Phone"
+                android:inputType="text"
+                android:layout_margin="5dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"
+                android:enabled="false"
+                android:id="@+id/profile_phone"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -91,16 +91,16 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="17dp" />
-    <Spinner
-        android:id="@+id/profile_gender"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Gender"
-        android:spinnerMode="dropdown"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"/>
+            <Spinner
+                android:id="@+id/profile_gender"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Gender"
+                android:spinnerMode="dropdown"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -125,16 +125,16 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="17dp" />
-    <Spinner
-        android:id="@+id/profile_owned_pets"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Owned pets"
-        android:spinnerMode="dropdown"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"/>
+            <Spinner
+                android:id="@+id/profile_owned_pets"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Owned pets"
+                android:spinnerMode="dropdown"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -142,16 +142,16 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="17dp" />
-    <Spinner
-        android:id="@+id/profile_experience"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Experience"
-        android:spinnerMode="dropdown"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"/>
+            <Spinner
+                android:id="@+id/profile_experience"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Experience"
+                android:spinnerMode="dropdown"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -162,16 +162,16 @@
                 android:textSize="17dp" />
 
 
-    <AutoCompleteTextView
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Location"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"
-        android:id="@+id/profile_location"/>
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Location"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"
+                android:id="@+id/profile_location"/>
 
 
 
@@ -182,46 +182,46 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textSize="17dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="10dp"
-        android:hint="Description"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text_rounded_corner"
-        android:elevation="5dp"
-        android:id="@+id/profile_description"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:hint="Description"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:background="@drawable/edit_text_rounded_corner"
+                android:elevation="5dp"
+                android:id="@+id/profile_description"/>
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Update Profile"
-            android:textColor="@color/white"
-            android:id="@+id/profile_update_btn"
-            android:background="@drawable/button_rounded_corner"/>
-        <ProgressBar
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:indeterminateTint="@color/my_primary"
-            android:layout_gravity="center"
-            android:id="@+id/profile_progress_bar"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Update Profile"
+                    android:textColor="@color/white"
+                    android:id="@+id/profile_update_btn"
+                    android:background="@drawable/button_rounded_corner"/>
+                <ProgressBar
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/my_primary"
+                    android:layout_gravity="center"
+                    android:id="@+id/profile_progress_bar"/>
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/logout_btn"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:id="@+id/logout_btn"/>
 
         </LinearLayout>
     </ScrollView>

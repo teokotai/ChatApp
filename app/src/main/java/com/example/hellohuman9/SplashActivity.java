@@ -19,7 +19,6 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         if (FirebaseUtil.isLoggedIn() && getIntent().getExtras()!=null){
-            //from notification
             String userId = getIntent().getExtras().getString("userId");
             FirebaseUtil.allUserCollectionReference().document(userId).get()
                     .addOnCompleteListener(task -> {

@@ -32,9 +32,9 @@ import java.util.concurrent.TimeUnit;
 public class LoginOtpActivity extends AppCompatActivity {
 
     String phoneNumber;
-    long timeoutSeconds = 60L; //60 sec timeout
-    String verificationCode; //verifies the otp
-    PhoneAuthProvider.ForceResendingToken resendingToken; //resends the code to the user
+    long timeoutSeconds = 60L;
+    String verificationCode;
+    PhoneAuthProvider.ForceResendingToken resendingToken;
     EditText otpInput;
     Button nextBtn;
     ProgressBar progressBar;
@@ -51,13 +51,11 @@ public class LoginOtpActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.login_progress_bar);
         resendOtpTextView = findViewById(R.id.resend_otp_textview);
 
-        //print the phone nr we got from another activity
         phoneNumber = getIntent().getExtras().getString("phone");
 
         sendOtp(phoneNumber,false);
 
         nextBtn.setOnClickListener(v -> {
-            //takes otp from the user (user inputs the otp)
             String enteredOtp = otpInput.getText().toString();
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationCode,enteredOtp);
             signIn(credential);
@@ -71,8 +69,11 @@ public class LoginOtpActivity extends AppCompatActivity {
     }
 
     void sendOtp(String phoneNumber,Boolean isResend){
+
         startResendTimer();
+
         setInProgress(true);
+
         PhoneAuthOptions.Builder builder =
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber(phoneNumber)
@@ -91,7 +92,6 @@ public class LoginOtpActivity extends AppCompatActivity {
                                 setInProgress(false);
                             }
 
-                            //sends code to the user to verify the otp
                             @Override
                             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 super.onCodeSent(s, forceResendingToken);
@@ -101,12 +101,12 @@ public class LoginOtpActivity extends AppCompatActivity {
                                 setInProgress(false);
                             }
                         });
+
         if (isResend){
             PhoneAuthProvider.verifyPhoneNumber(builder.setForceResendingToken(resendingToken).build());
         } else {
             PhoneAuthProvider.verifyPhoneNumber(builder.build());
         }
-
     }
 
     void setInProgress(boolean inProgress){
@@ -120,7 +120,6 @@ public class LoginOtpActivity extends AppCompatActivity {
     }
 
     void signIn(PhoneAuthCredential phoneAuthCredential){
-        //login and go to next activity
         setInProgress(true);
         mAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -157,11 +156,3 @@ public class LoginOtpActivity extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
-
-
-

@@ -1,12 +1,8 @@
 package com.example.hellohuman9.model;
 
-import android.util.Log;
-import android.widget.CheckBox;
-
 import com.google.firebase.Timestamp;
 
 public class UserModel {
-
     private String phone;
     private String username;
     private Timestamp createdTimestamp;
@@ -24,7 +20,6 @@ public class UserModel {
 
     public UserModel() {
     }
-
     public UserModel(String phone, String username, Timestamp createdTimestamp, String userId,
                      boolean checkBoxPetOwner, boolean checkBoxCaretaker,
                      String gender, String ownedPets, String experience, int age, String location, String description, String position) {
@@ -42,9 +37,7 @@ public class UserModel {
         this.description = description;
         this.position = position;
 
-        //Log.i("TEST_ME", "this is a test message for checkbox: " + checkBoxPetOwner + " / " + checkBoxCaretaker);
     }
-
     public String getPhone() {
         return phone;
     }

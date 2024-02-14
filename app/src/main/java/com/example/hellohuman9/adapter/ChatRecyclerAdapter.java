@@ -33,13 +33,11 @@ public class ChatRecyclerAdapter extends FirestoreRecyclerAdapter<ChatMessageMod
 
     @Override
     protected void onBindViewHolder(@NonNull ChatModelViewHolder holder, int position, @NonNull ChatMessageModel model) {
-        //Log.i("asdfgh","qwer");
-        //display message (model is massage, getSenderId is me) if the message is sent by me then the left side won t be shown
         if (model.getSenderId().equals(FirebaseUtil.currentUserId())){
             holder.leftChatLayout.setVisibility(View.GONE);
             holder.rightChatLayout.setVisibility(View.VISIBLE);
             holder.rightChatTextview.setText(model.getMessage());
-        }else { //if it is sent by other user left chat will be seen
+        }else {
             holder.rightChatLayout.setVisibility(View.GONE);
             holder.leftChatLayout.setVisibility(View.VISIBLE);
             holder.leftChatTextview.setText(model.getMessage());
@@ -69,14 +67,3 @@ public class ChatRecyclerAdapter extends FirestoreRecyclerAdapter<ChatMessageMod
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-

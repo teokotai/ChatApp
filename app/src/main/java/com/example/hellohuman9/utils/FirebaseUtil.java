@@ -18,10 +18,10 @@ public class FirebaseUtil {
     }
 
     public static boolean isLoggedIn(){
-        if (currentUserId()!=null){ //user is logged in and goes directly to the Main Activity
+        if (currentUserId()!=null){
             return true;
         }
-        return false; //if id is null, user is not logged in
+        return false;
     }
 
     public static DocumentReference currentUserDetails(){
@@ -41,7 +41,7 @@ public class FirebaseUtil {
         return getChatroomReference(chatroomId).collection("chats");
     }
 
-    //create unique chatroom id
+    //create chatroom id
     public static String getChatroomId(String userId1, String userId2){
         if (userId1.hashCode()<userId2.hashCode()){
             return userId1+"_"+userId2;

@@ -39,8 +39,6 @@ public class LoginUsernameActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.login_progress_bar);
 
 
-//        checkBoxCaretaker.isChecked()
-
         phoneNumber = getIntent().getExtras().getString("phone");
         getUsername();
 
@@ -57,15 +55,13 @@ public class LoginUsernameActivity extends AppCompatActivity {
         }
         setInProgress(true);
 
-        if (userModel!=null){ //userModel has some data
+        if (userModel!=null){
             userModel.setUsername(username);
         } else {
             userModel = new UserModel(phoneNumber,username, Timestamp.now(),FirebaseUtil.currentUserId(),
                     false, false,
-                    "Female", "None", "", 18, "", "","");
+                    "", "None", "", 18, "", "","");
         }
-
-        //save data to Firestore db
         FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -77,7 +73,6 @@ public class LoginUsernameActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     void getUsername(){
@@ -87,9 +82,8 @@ public class LoginUsernameActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 setInProgress(false);
                 if (task.isSuccessful()){
-                    //send username to user, stores user info in model
                     userModel = task.getResult().toObject(UserModel.class);
-                    if (userModel!=null){ //if data exists
+                    if (userModel!=null){
                         usernameInput.setText(userModel.getUsername());
                     }
                 }
